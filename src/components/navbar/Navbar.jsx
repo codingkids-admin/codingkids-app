@@ -85,7 +85,9 @@ const Navbar = () => {
           ))}
           {isMobile && (
             <a
-              href={sendWhatsapp("hellow")}
+              href={sendWhatsapp(
+                "Hello Sir Koding Kids!\nNama saya: <masukan_nama_kamu>\nSaya tertarik dengan kelas-kelas di koding kids, boleh bantu saya dalam memilih kelas yang cocok untuk saya/anak saya?"
+              )}
               target="_blank"
               onClick={() => {
                 setState({ isNavbarOpen: !state.isNavbarOpen });
@@ -98,7 +100,13 @@ const Navbar = () => {
         </ul>
         <div className={`${styles.nav_actions_container}`}>
           <a
-            href={isMobile ? "/" : sendWhatsapp("Testing")}
+            href={
+              isMobile
+                ? "/"
+                : sendWhatsapp(
+                    "Hello Sir Koding Kids!\nNama saya: <masukan_nama_kamu>\nSaya tertarik dengan kelas-kelas di koding kids, boleh bantu saya dalam memilih kelas yang cocok untuk saya/anak saya?"
+                  )
+            }
             target="_blank"
             onClick={(ev) => {
               if (isMobile) {
@@ -108,7 +116,7 @@ const Navbar = () => {
             }}
             className={`${styles.nav_btn_primary} text-decoration-none btn-primary`}
           >
-            {isMobile ? <MenuIcon /> : "Join us!"}
+            {isMobile ? <MenuIcon style={{ fill: "white" }} /> : "Join us!"}
           </a>
         </div>
       </div>

@@ -1,9 +1,21 @@
-"use client";
-import { useEffect } from "react";
+import Header from "@/components/header/Header";
+
+export const metadata = {
+  applicationName: "Koding kids Indonesia",
+  referrer: "origin-when-cross-origin",
+  keywords: ["Coding Kids", "Online Course", "Coding"],
+  title: "Koding Kids | We make kids love coding",
+  description: "We don't teach coding, we make kids love coding.",
+  icons: {
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+  },
+};
 
 export default function Home() {
-  useEffect(() => {
-    require("bootstrap/dist/js/bootstrap.min.js");
-  }, []);
-  return <main></main>;
+  return (
+    <main>
+      <Header />
+    </main>
+  );
 }

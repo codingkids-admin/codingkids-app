@@ -1,0 +1,57 @@
+@use "../../app/breakpoints.scss" as *;
+@use "../../app/variables.scss" as v;
+
+.container {
+  background-color: v.$secondary-color;
+  overflow: hidden;
+}
+
+.header_title {
+  font-size: map-get($map: v.$font-sizes, $key: h1-sm);
+  text-align: center;
+
+  span {
+    color: v.$primary-color;
+  }
+
+  @include breakpoint(md) {
+    font-size: map-get($map: v.$font-sizes, $key: h1-lg);
+    text-align: left;
+  }
+}
+
+.header_tag {
+  display: flex;
+  align-items: center;
+  font-size: map-get($map: v.$font-sizes, $key: p-sm);
+  color: white;
+  background-color: v.$primary-color;
+  border-radius: 1rem;
+
+  @include breakpoint(md) {
+    font-size: map-get($map: v.$font-sizes, $key: p-sm);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(-0.5rem);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-0.5rem);
+  }
+}
+
+.header_img_container > video {
+  animation-name: move;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  border-radius: 50%;
+  width: 100%;
+}
