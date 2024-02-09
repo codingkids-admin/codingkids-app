@@ -1,0 +1,55 @@
+@use "../../app/breakpoints.scss" as *;
+@use "../../app/variables.scss" as v;
+
+.carousel_control_prev_container {
+  @include breakpoint(md) {
+    width: fit-content;
+    margin-left: -1.65rem;
+  }
+}
+.carousel_control_prev {
+  background-image: none;
+  background-color: v.$tersary-1-color;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+
+  @include breakpoint(md) {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+}
+
+.carousel_control_next_container {
+  @include breakpoint(md) {
+    width: fit-content;
+    margin-right: -1.65rem;
+  }
+}
+.carousel_control_next {
+  background-image: none;
+  background-color: v.$tersary-1-color;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+
+  @include breakpoint(md) {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+}
+
+.carousel_container {
+  width: 95%;
+  background-color: white;
+  box-shadow: 0px 8px 8px v.$shadow-color;
+  border-radius: 1rem;
+
+  @include breakpoint(md) {
+    width: 65%;
+  }
+}
+
+.carouse_item > img {
+  object-fit: contain;
+}

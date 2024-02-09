@@ -9,7 +9,7 @@ const tags = [
 
 const Header = () => {
   return (
-    <header className={`${styles.container}`}>
+    <div className={`${styles.container}`}>
       <div
         className={`${styles.header_body} container align-items-center d-flex flex-column-reverse flex-md-row justify-content-between`}
       >
@@ -31,12 +31,17 @@ const Header = () => {
         </div>
 
         <div className={`${styles.header_img_container}`}>
-          <video autoPlay loop muted>
-            <source src="/header.mp4" type="video/mp4" />
-          </video>
+          <video
+            playsInline
+            autoPlay
+            loop
+            muted
+            src="/header.mp4"
+            type="video/mp4"
+          ></video>
         </div>
       </div>
-    </header>
+    </div>
   );
 };
 

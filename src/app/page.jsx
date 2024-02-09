@@ -1,4 +1,5 @@
 import Header from "@/components/header/Header";
+import Information from "@/components/informations/Information";
 
 export const metadata = {
   applicationName: "Koding kids Indonesia",
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <main>
       <Header />
+      <Information />
     </main>
   );
 }
