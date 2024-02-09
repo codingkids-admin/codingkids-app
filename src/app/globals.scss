@@ -1,0 +1,29 @@
+@use "./variables.scss" as v;
+@use "./breakpoints.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-primary {
+  font-weight: bold;
+  border: none;
+  padding: 0.5rem;
+  background-color: v.$primary-color;
+  color: white;
+  border-radius: 1rem;
+  transform: scale(1);
+  transition: all 0.1s ease;
+  font-size: map-get($map: v.$font-sizes, $key: p-sm);
+
+  @include breakpoint(md) {
+    padding: 0.5rem 1.5rem;
+    font-size: map-get($map: v.$font-sizes, $key: p-lg);
+  }
+}
+
+.btn-primary:active {
+  box-shadow: inset 0rem 0rem 1.25rem 0.15rem v.$shadow-color;
+  transform: scale(0.965);
+}
