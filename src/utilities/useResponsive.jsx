@@ -1,18 +1,24 @@
 import { useEffect, useState } from "react";
 
 const useResponsive = (size) => {
-  const sizes = {
-    sm: 768,
-    md: 992,
-    lg: 1200,
-    xl: 1400,
-  };
-  const minWidth = sizes[size];
   const [state, setState] = useState({
-    windowWidth: window.innerWidth,
-    isDesiredWidth: window.innerWidth < minWidth,
+    windowWidth: 0,
+    isDesiredWidth: false,
   });
+
   useEffect(() => {
+    const minWidth = {
+      sm: 768,
+      md: 992,
+      lg: 1200,
+      xl: 1400,
+    }[size];
+
+    setState({
+      windowWidth: window.innerWidth,
+      isDesiredWidth: window.innerWidth < minWidth,
+    });
+
     const resizeHandler = (ev) => {
       const currentWindowWidth = window.innerWidth;
       const isDesiredWidth = currentWindowWidth < minWidth;
@@ -23,7 +29,7 @@ const useResponsive = (size) => {
     };
     window.addEventListener("resize", resizeHandler);
     return () => window.removeEventListener("resize", resizeHandler);
-  }, [state.windowWidth]);
+  }, [state.windowWidth, size]);
   return state.isDesiredWidth;
 };
 

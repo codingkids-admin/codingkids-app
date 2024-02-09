@@ -1,14 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.scss";
 import Navlink from "./Navlink";
 import Link from "next/link";
 import useResponsive from "@/utilities/useResponsive";
 import MenuIcon from "@mui/icons-material/Menu";
+import Image from "next/image";
+import Loading from "../common/Loading";
 
 const Navbar = () => {
   const isMobile = useResponsive("sm");
+  const [isLoading, setIsLoading] = useState(true);
   const [state, setState] = useState({
     isNavbarOpen: false,
   });
@@ -27,11 +30,17 @@ const Navbar = () => {
       title: "Contact us",
     },
   ];
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
 
   return (
     <nav className={`${styles.container} position-relative px-0`}>
+      {isLoading && <Loading />}
       <div
-        className={`${styles.nav_body} container w-100 d-flex justify-content-between align-items-center py-4 gap-4 gap-lg-0 px-4`}
+        className={`${isLoading && "d-none"} ${
+          styles.nav_body
+        } container w-100 d-flex justify-content-between align-items-center py-3 gap-4 gap-lg-0 px-4`}
       >
         <Link
           href={"/"}
@@ -40,7 +49,14 @@ const Navbar = () => {
           }}
           className={`${styles.nav_brand} d-flex gap-1 align-items-center text-decoration-none`}
         >
-          <img src="/logo.svg" alt="Coding kids indonesia logo" />
+          <div className={`position-relative ${styles.nav_img_container}`}>
+            <Image
+              priority={true}
+              src="/logo.svg"
+              alt="Coding kids indonesia logo"
+              fill
+            />
+          </div>
           {isMobile && <p className="m-0">oding kids</p>}
         </Link>
         <ul

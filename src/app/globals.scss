@@ -27,3 +27,8 @@
   box-shadow: inset 0rem 0rem 1.25rem 0.15rem v.$shadow-color;
   transform: scale(0.965);
 }
+
+.loading_label {
+  color: v.$tersary-1-color;
+  font-size: map-get($map: v.$font-sizes, $key: p-sm);
+}

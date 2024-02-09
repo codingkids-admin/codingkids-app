@@ -29,9 +29,14 @@
 }
 
 .nav_brand {
-  img {
+  .nav_img_container {
     width: 3rem;
     height: 3rem;
+
+    @include breakpoint(md) {
+      width: 3.25rem;
+      height: 3.25rem;
+    }
   }
 
   p {
@@ -55,7 +60,7 @@
   background-color: v.$secondary-color;
   width: 100%;
   left: 0;
-  top: 5.95rem;
+  top: 5rem;
   z-index: -1;
   position: absolute;
 
