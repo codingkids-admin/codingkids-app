@@ -8,6 +8,7 @@ import useResponsive from "@/utilities/useResponsive";
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
 import Loading from "../common/Loading";
+import sendWhatsapp from "@/utilities/sendWhatsapp";
 
 const Navbar = () => {
   const isMobile = useResponsive("sm");
@@ -35,7 +36,13 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`${styles.container} position-relative px-0`}>
+    <nav
+      className={`${styles.container} ${
+        state.isNavbarOpen
+          ? styles.nav_container_open
+          : styles.nav_container_close
+      } px-0`}
+    >
       {isLoading && <Loading />}
       <div
         className={`${isLoading && "d-none"} ${
@@ -64,7 +71,7 @@ const Navbar = () => {
             isMobile && !state.isNavbarOpen
               ? styles.nav_link_close
               : styles.nav_link_open
-          } m-0 d-flex flex-column flex-lg-row flex-md-row gap-2 gap-lg-5 align-items-center list-unstyled`}
+          } pb-4 pb-md-0 m-0 d-flex flex-column flex-lg-row flex-md-row gap-2 gap-lg-5 align-items-center list-unstyled`}
         >
           {links.map(({ href, title }, index) => (
             <Navlink
@@ -76,16 +83,33 @@ const Navbar = () => {
               title={title}
             />
           ))}
+          {isMobile && (
+            <a
+              href={sendWhatsapp("hellow")}
+              target="_blank"
+              onClick={() => {
+                setState({ isNavbarOpen: !state.isNavbarOpen });
+              }}
+              className={`${styles.nav_btn_primary} text-decoration-none btn-primary`}
+            >
+              Join us!
+            </a>
+          )}
         </ul>
         <div className={`${styles.nav_actions_container}`}>
-          <button
-            onClick={() => {
-              setState({ isNavbarOpen: !state.isNavbarOpen });
+          <a
+            href={isMobile ? "/" : sendWhatsapp("Testing")}
+            target="_blank"
+            onClick={(ev) => {
+              if (isMobile) {
+                ev.preventDefault();
+                setState({ isNavbarOpen: !state.isNavbarOpen });
+              }
             }}
-            className={`${styles.nav_btn_primary} btn-primary`}
+            className={`${styles.nav_btn_primary} text-decoration-none btn-primary`}
           >
             {isMobile ? <MenuIcon /> : "Join us!"}
-          </button>
+          </a>
         </div>
       </div>
     </nav>
