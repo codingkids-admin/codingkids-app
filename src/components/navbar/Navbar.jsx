@@ -19,7 +19,7 @@ const Navbar = () => {
 
   const links = [
     {
-      href: "/our-class",
+      href: "#our-class",
       title: "Our class",
     },
     {
@@ -62,6 +62,7 @@ const Navbar = () => {
               src="/logo.svg"
               alt="Coding kids indonesia logo"
               fill
+              sizes="100%"
             />
           </div>
           {isMobile && <p className="m-0">oding kids</p>}

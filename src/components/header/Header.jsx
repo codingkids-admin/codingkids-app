@@ -9,14 +9,14 @@ const tags = [
 
 const Header = () => {
   return (
-    <div className={`${styles.container}`}>
+    <div className={`${styles.container} bg-secondary`}>
       <div
         className={`${styles.header_body} container align-items-center d-flex flex-column-reverse flex-md-row justify-content-between`}
       >
         <div
           className={`${styles.header_title_container} gap-2 d-flex flex-column justify-content-between`}
         >
-          <h1 className={`${styles.header_title} m-0 fw-bold my-2 m-lg-0`}>
+          <h1 className={`header_title m-0 fw-bold my-2 m-lg-0`}>
             We don&apos;t teach coding,
             <br />
             We make <span>kids love coding.</span>

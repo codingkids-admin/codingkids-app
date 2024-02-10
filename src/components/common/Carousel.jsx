@@ -1,20 +1,24 @@
 import React from "react";
 import styles from "./carousel.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 
 const Carousel = () => {
   const informations = [
     {
       src: "carousel1.webp",
       alt: "Carousel 1",
+      link: "#",
     },
     {
       src: "carousel2.webp",
       alt: "Carousel 2",
+      link: "#",
     },
     {
       src: "carousel3.webp",
       alt: "Carousel 3",
+      link: "#",
     },
   ];
   return (
@@ -25,7 +29,10 @@ const Carousel = () => {
     >
       <div className="carousel-inner h-100">
         {informations.map((info, index) => (
-          <div
+          <Link
+            href={info.link}
+            rel="noopener noreferrer"
+            target="_blank"
             key={index}
             className={`${styles.carouse_item} ${
               index == 0 && "active"
@@ -39,7 +46,7 @@ const Carousel = () => {
               sizes="100%"
               priority={true}
             />
-          </div>
+          </Link>
         ))}
       </div>
       <button
@@ -57,6 +64,7 @@ const Carousel = () => {
             fill
             src={"/carousel/left.svg"}
             alt="Left arrow"
+            sizes="100%"
           />
         </span>
         <span className="visually-hidden">Previous</span>
@@ -76,6 +84,7 @@ const Carousel = () => {
             fill
             src={"/carousel/right.svg"}
             alt="Right arrow"
+            sizes="100%"
           />
         </span>
         <span className="visually-hidden">Next</span>

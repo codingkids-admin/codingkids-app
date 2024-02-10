@@ -1,0 +1,27 @@
+@use "../../app/breakpoints.scss" as *;
+@use "../../app/variables.scss" as v;
+
+.section_card {
+  overflow-x: scroll;
+}
+
+.section_card::-webkit-scrollbar-track {
+  background: v.$shadow-1-color;
+  border-radius: 1rem;
+}
+
+.section_card::-webkit-scrollbar {
+  height: 0.45rem;
+  border-radius: 1rem;
+}
+
+.section_card::-webkit-scrollbar-thumb {
+  background-color: v.$primary-color;
+  border-radius: 1rem;
+}
+
+.section_card::-webkit-scrollbar {
+  @include breakpoint(md) {
+    display: none;
+  }
+}

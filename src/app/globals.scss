@@ -7,6 +7,10 @@
   color: v.$text-color;
 }
 
+.bg-secondary {
+  background-color: v.$secondary-color !important;
+}
+
 .btn-primary {
   font-weight: bold;
   border: none;
@@ -24,11 +28,25 @@
 }
 
 .btn-primary:active {
-  box-shadow: inset 0rem 0rem 1.25rem 0.15rem v.$shadow-color;
+  box-shadow: inset 0rem 0rem 1.25rem 0.15rem v.$shadow-1-color;
   transform: scale(0.965);
 }
 
 .loading_label {
   color: v.$tersary-1-color;
   font-size: map-get($map: v.$font-sizes, $key: p-sm);
+}
+
+.header_title {
+  font-size: map-get($map: v.$font-sizes, $key: h1-sm);
+  text-align: center;
+
+  span {
+    color: v.$primary-color;
+  }
+
+  @include breakpoint(md) {
+    font-size: map-get($map: v.$font-sizes, $key: h1-lg);
+    text-align: left;
+  }
 }

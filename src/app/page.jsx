@@ -1,3 +1,4 @@
+import Classes from "@/components/classes/Classes";
 import Header from "@/components/header/Header";
 import Information from "@/components/informations/Information";
 
@@ -18,6 +19,7 @@ export default function Home() {
     <main>
       <Header />
       <Information />
+      <Classes/>
     </main>
   );
 }
