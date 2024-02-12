@@ -33,7 +33,7 @@ const Classes = () => {
     <section className={`${styles.container} bg-secondary mb-5`} id="our-class">
       <div className={`${styles.section_body} container py-5`}>
         <h1 className={`header_title fw-bold`}>Live coding classes</h1>
-        <div className={`${styles.section_card} mt-3 d-flex gap-5 pb-3`}>
+        <div className={`${styles.section_card} mt-3 d-flex pb-3`}>
           {data.map((v, index) => (
             <Card
               key={index}

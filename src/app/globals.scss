@@ -50,3 +50,16 @@
     text-align: left;
   }
 }
+
+.secion_title {
+  background-color: v.$primary-color;
+  font-size: map-get($map: v.$font-sizes, $key: p-sm);
+  color: white;
+  width: fit-content;
+  border-radius: 1rem;
+
+  @include breakpoint(md) {
+    font-size: map-get($map: v.$font-sizes, $key: h1-sm);
+    text-align: left;
+  }
+}

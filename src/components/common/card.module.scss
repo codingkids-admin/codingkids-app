@@ -6,6 +6,11 @@
   background-color: white;
   border-radius: 1rem;
   box-shadow: 0px 8px 8px rgba(78, 78, 78, 0.05);
+  margin-right: 1.15rem;
+
+  @include breakpoint(md) {
+    margin-right: 1rem;
+  }
 }
 
 .card_img_container {

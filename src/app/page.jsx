@@ -1,6 +1,7 @@
 import Classes from "@/components/classes/Classes";
 import Header from "@/components/header/Header";
 import Information from "@/components/informations/Information";
+import Value from "@/components/value/Value";
 
 export const metadata = {
   applicationName: "Koding kids Indonesia",
@@ -19,7 +20,8 @@ export default function Home() {
     <main>
       <Header />
       <Information />
-      <Classes/>
+      <Classes />
+      <Value />
     </main>
   );
 }
