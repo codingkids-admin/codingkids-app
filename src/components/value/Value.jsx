@@ -43,6 +43,7 @@ const Value = () => {
       >
         {values.map((v, index) => (
           <div
+            key={index}
             className={`${styles.section_card} p-4 d-flex gap-4 flex-column justify-content-center align-items-center`}
           >
             <div
