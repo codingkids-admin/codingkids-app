@@ -114,7 +114,7 @@ const Card = () => {
           />
           {form.whatsapp.length > 15 && (
             <p className={`${styles.error_message} mt-1`}>
-              Phone number can't be greater that 15
+              Phone number can&apos;t be greater that 15
             </p>
           )}
         </div>

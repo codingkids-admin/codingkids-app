@@ -24,6 +24,24 @@ const AboutUs = () => {
             >
               <Image fill sizes="100%" src={`/school/cbs.png`} alt="CBS" />
             </div>
+
+            <div
+              className={`position-relative ${styles.section_img_container}`}
+            >
+              <Image fill sizes="100%" src={`/school/jis.png`} alt="JIS" />
+            </div>
+
+            <div
+              className={`position-relative ${styles.section_img_container}`}
+            >
+              <Image fill sizes="100%" src={`/school/sis.png`} alt="SIS" />
+            </div>
+
+            <div
+              className={`position-relative ${styles.section_img_container}`}
+            >
+              <Image fill sizes="100%" src={`/school/bis.png`} alt="bis" />
+            </div>
           </div>
         </div>
       </div>
