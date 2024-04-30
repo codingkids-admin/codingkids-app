@@ -5,6 +5,7 @@ import Faq from "@/components/faq/Faq";
 import Header from "@/components/header/Header";
 import Information from "@/components/informations/Information";
 import Value from "@/components/value/Value";
+import AboutUs from "@/components/aboutUs/AboutUs";
 
 export const metadata = {
   applicationName: "Koding kids Indonesia",
@@ -28,6 +29,7 @@ export default function Home() {
       <Faq />
       <FreeClasses />
       <ContactUs />
+      <AboutUs/>
     </main>
   );
 }
