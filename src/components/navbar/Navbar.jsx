@@ -19,7 +19,7 @@ const Navbar = () => {
 
   const links = [
     {
-      href: "#our-class",
+      href: "/#our-class",
       title: "Our class",
     },
     {

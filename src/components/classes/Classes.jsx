@@ -6,23 +6,23 @@ const Classes = () => {
   const data = [
     {
       src: "https://placehold.co/400",
-      title: "Game Developer",
-      desc: "Kids will learn basic programming and be able to create their own games.",
+      title: "Kiddo Developer",
+      desc: "Kids will learn problem solving using game-based learning method.",
       link: "/our-class/game-dev",
       beforePrice: "399.000",
       afterPrice: "275.000",
     },
     {
       src: "https://placehold.co/400",
-      title: "Web Developer",
-      desc: "Kids will learn how to create a website according to their creativity.",
+      title: "Junior Developer",
+      desc: "Kids will learn to create their own games using block-based programming method.",
       link: "/our-class/web-dev",
       beforePrice: "399.000",
       afterPrice: "275.000",
     },
     {
       src: "https://placehold.co/400",
-      title: "Python Developer",
+      title: "Senior Developer",
       desc: "Kids will have their first experience in writing lines of code.",
       link: "/our-class/py-dev",
       beforePrice: "399.000",

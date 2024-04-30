@@ -1,0 +1,6 @@
+@use "../../app/breakpoints.scss" as *;
+@use "../../app/variables.scss" as v;
+
+.container {
+  background-color: v.$secondary-color;
+}

@@ -29,8 +29,14 @@ const Card = ({ src, title, desc, link, beforePrice, afterPrice }) => {
             Rp{beforePrice}
           </p>
           <p className={`${styles.card_after_price}`}>
-            Rp{afterPrice}
-            <span>/session</span>
+            {afterPrice == "" ? (
+              "FREE"
+            ) : (
+              <>
+                Rp{afterPrice}
+                <span>/session</span>
+              </>
+            )}
           </p>
         </div>
 

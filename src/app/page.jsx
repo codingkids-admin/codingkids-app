@@ -1,4 +1,7 @@
+import ContactUs from "@/components/contactUs/ContactUs";
 import Classes from "@/components/classes/Classes";
+import FreeClasses from "@/components/classes/FreeClasses";
+import Faq from "@/components/faq/Faq";
 import Header from "@/components/header/Header";
 import Information from "@/components/informations/Information";
 import Value from "@/components/value/Value";
@@ -22,6 +25,9 @@ export default function Home() {
       <Information />
       <Classes />
       <Value />
+      <Faq />
+      <FreeClasses />
+      <ContactUs />
     </main>
   );
 }

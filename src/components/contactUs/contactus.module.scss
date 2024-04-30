@@ -1,0 +1,13 @@
+@use "../../app/breakpoints.scss" as *;
+@use "../../app/variables.scss" as v;
+
+.container {
+  background-color: v.$secondary-color;
+}
+
+.contact_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
