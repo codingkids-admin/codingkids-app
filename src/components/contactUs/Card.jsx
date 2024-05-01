@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./card.module.scss";
+import { AUTH } from "../../utilities/Constant";
 
 const Card = () => {
   const [form, setForm] = useState({
@@ -9,9 +10,7 @@ const Card = () => {
     relationship: "mommy",
     whatsapp: "",
   });
-  let message = encodeURI(
-    `Kids name: ${form.kidsFullName} | Parent name: ${form.parentFullName} | Relationship: ${form.relationship} | Whatsapp: ${form.whatsapp}`
-  );
+
   return (
     <div className={`${styles.card_container} p-4`}>
       <form className="d-flex flex-column gap-4">
@@ -31,6 +30,7 @@ const Card = () => {
             name="kids_name"
             id="kids_name"
             placeholder="Your kids full name"
+            value={form.kidsFullName}
             required
           />
         </div>
@@ -51,6 +51,7 @@ const Card = () => {
             name="parent_name"
             id="parent_name"
             placeholder="Parent full name"
+            value={form.parentFullName}
           />
         </div>
 
@@ -117,6 +118,7 @@ const Card = () => {
             name="whatsapp"
             id="whatsapp"
             placeholder="Whatsapp number"
+            value={form.whatsapp}
           />
           {form.whatsapp.length > 15 && (
             <p className={`${styles.error_message} mt-1`}>
@@ -131,7 +133,33 @@ const Card = () => {
               display: form.whatsapp.length > 15 && "none",
             }}
             onClick={(e) => {
-              console.log(form);
+              e.preventDefault();
+
+              fetch("https://codingkids.id/api/mail", {
+                method: "POST",
+                headers: {
+                  Authorization: AUTH,
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  message: `<div>
+                  <h3>Submitted at ${new Date()}</h3>
+                  <h4>Kids full name: [ ${form.kidsFullName} ]</h4> 
+                  <h4>Parent full name: [ ${form.parentFullName} ]</h4> 
+                  <h4>Relationship: [ ${form.relationship} ]</h4>
+                  <h4>Whatsapp : [ ${form.whatsapp} ]</h4>
+                  </div>`,
+                }),
+              })
+                .then((res) => res.json())
+                .then((data) => {
+                  setForm({
+                    ...form,
+                    kidsFullName: "",
+                    parentFullName: "",
+                    whatsapp: "",
+                  });
+                });
             }}
             className={`btn-primary ${styles.btn_form}`}
           >
