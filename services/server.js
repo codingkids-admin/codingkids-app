@@ -18,7 +18,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   if (
     req.headers.authorization != undefined &&
     req.headers.authorization == process.env.AUTH
