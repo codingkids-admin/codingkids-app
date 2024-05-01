@@ -3,7 +3,11 @@
 
 .collaborators_container {
   display: flex;
-  gap: 2.5rem;
+  gap: 0.5rem;
+
+  @include breakpoint(md) {
+    gap: 2.5rem;
+  }
 }
 
 .section_img_container {
