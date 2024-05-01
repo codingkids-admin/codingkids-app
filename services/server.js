@@ -18,6 +18,23 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+app.get("/", (req, res) => {
+  if (
+    req.headers.authorization != undefined &&
+    req.headers.authorization == process.env.AUTH
+  ) {
+    res.status(200).json({
+      code: 200,
+      message: "Server running",
+    });
+  } else {
+    res.status(403).json({
+      code: 403,
+      message: "Invalid authorization token",
+    });
+  }
+});
+
 app.post("/api/send", (req, res) => {
   const mailOptions = {
     from: "admin@codingkids.id",
