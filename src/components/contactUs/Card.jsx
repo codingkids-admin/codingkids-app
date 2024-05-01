@@ -8,7 +8,7 @@ const Card = () => {
   const [form, setForm] = useState({
     kidsFullName: "",
     parentFullName: "",
-    relationship: "mommy",
+    relationship: "",
     whatsapp: "",
   });
 
@@ -69,10 +69,9 @@ const Card = () => {
                 }
                 type="radio"
                 id="relationshipMommy"
-                name="relationshipMommy"
-                value="mommy"
+                name="relationship"
                 className="me-1"
-                defaultChecked
+                checked={form.relationship == "mommy"}
               />
               <label htmlFor="relationshipMommy">Mommy</label>
             </span>
@@ -87,9 +86,10 @@ const Card = () => {
                 }
                 type="radio"
                 id="relationshipDaddy"
-                name="relationshipDaddy"
+                name="relationship"
                 value="daddy"
                 className="me-1"
+                checked={form.relationship == "daddy"}
               />
               <label htmlFor="relationshipDaddy">Daddy</label>
             </span>
