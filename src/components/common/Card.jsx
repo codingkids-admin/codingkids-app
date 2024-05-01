@@ -8,13 +8,13 @@ const Card = ({ src, title, desc, link, beforePrice, afterPrice }) => {
     <div className={`${styles.card_container}`}>
       <div className={`${styles.card_img_container} position-relative mb-3`}>
         <Image
-        rel="preload"
+          rel="preload"
           className="w-100"
           fill
           priority={true}
-          sizes="100%"
           src={src}
           alt={title}
+          sizes="100%"
         />
       </div>
       <div className={`${styles.card_body_container} p-3`}>

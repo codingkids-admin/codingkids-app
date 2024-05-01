@@ -24,10 +24,11 @@ const AboutUs = () => {
             >
               <Image
                 rel="preload"
-                fill
-                sizes="100%"
-                src={`/school/cbs.webp`}
+                priority={true}
+                src="/school/cbs.webp"
                 alt="CBS"
+                fill
+                sizes="100%"
               />
             </div>
 
@@ -36,10 +37,11 @@ const AboutUs = () => {
             >
               <Image
                 rel="preload"
-                fill
-                sizes="100%"
-                src={`/school/jis.webp`}
+                priority={true}
+                src="/school/jis.webp"
                 alt="JIS"
+                fill
+                sizes="100%"
               />
             </div>
 
@@ -48,10 +50,11 @@ const AboutUs = () => {
             >
               <Image
                 rel="preload"
-                fill
-                sizes="100%"
-                src={`/school/sis.webp`}
+                priority={true}
+                src="/school/sis.webp"
                 alt="SIS"
+                fill
+                sizes="100%"
               />
             </div>
 
@@ -60,10 +63,11 @@ const AboutUs = () => {
             >
               <Image
                 rel="preload"
+                priority={true}
+                src="/school/bsj.webp"
+                alt="BSJ"
                 fill
                 sizes="100%"
-                src={`/school/bsj.webp`}
-                alt="bis"
               />
             </div>
           </div>

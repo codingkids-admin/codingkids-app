@@ -58,7 +58,7 @@ const Navbar = () => {
         >
           <div className={`position-relative ${styles.nav_img_container}`}>
             <Image
-            rel="preload"
+              rel="preload"
               priority={true}
               src="/logo.svg"
               alt="Coding kids indonesia logo"

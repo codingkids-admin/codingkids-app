@@ -40,8 +40,9 @@ const Carousel = () => {
           >
             <Image
               rel="preload"
+              priority={true}
               fill
-              src={"/carousel/" + info.src}
+              src={`/carousel/${info.src}`}
               className="d-block w-100 h-100"
               alt={info.alt}
               sizes="100%"
@@ -60,10 +61,11 @@ const Carousel = () => {
           aria-hidden="true"
         >
           <Image
+            priority={true}
             rel="preload"
             className="h-50 position-relative"
             fill
-            src={"/carousel/left.svg"}
+            src="/carousel/left.svg"
             alt="Left arrow"
             sizes="100%"
           />
@@ -81,10 +83,11 @@ const Carousel = () => {
           aria-hidden="true"
         >
           <Image
+            priority={true}
             rel="preload"
             className="h-50 position-relative"
             fill
-            src={"/carousel/right.svg"}
+            src="/carousel/right.svg"
             alt="Right arrow"
             sizes="100%"
           />

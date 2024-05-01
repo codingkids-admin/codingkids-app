@@ -50,7 +50,14 @@ const Value = () => {
               key={index}
               className={`position-relative ${styles.section_img_container}`}
             >
-              <Image rel="preload" fill sizes="100%" src={`/values/${v.img}`} alt={v.title} />
+              <Image
+                priority={true}
+                rel="preload"
+                fill
+                sizes="100%"
+                src={`/values/${v.img}`}
+                alt={v.title}
+              />
             </div>
 
             <div className={`${styles.section_desc} m-0 text-center`}>
