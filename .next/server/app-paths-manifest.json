@@ -1,6 +1,5 @@
 {
   "/_not-found": "app/_not-found.js",
-  "/api/mail/route": "app/api/mail/route.js",
   "/contact-us/page": "app/contact-us/page.js",
   "/fun-tips/page": "app/fun-tips/page.js",
   "/our-class/page": "app/our-class/page.js",

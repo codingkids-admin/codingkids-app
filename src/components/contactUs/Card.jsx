@@ -148,7 +148,7 @@ const Card = () => {
                 form.kidsFullName &&
                 form.parentFullName
               ) {
-                fetch("http://localhost:3000/api/mail", {
+                fetch("https://services.codingkids.id/mail", {
                   method: "POST",
                   headers: {
                     Authorization: AUTH,
