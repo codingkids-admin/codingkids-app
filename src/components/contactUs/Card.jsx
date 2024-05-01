@@ -16,7 +16,7 @@ const Card = () => {
     <div className={`${styles.card_container} p-4`}>
       <form className="d-flex flex-column gap-4">
         <div>
-          <label className="d-block" htmlFor="kids_name">
+          <label className="d-block" htmlFor="kidsName">
             Kids full name
           </label>
           <input
@@ -28,8 +28,8 @@ const Card = () => {
             }
             className={`${styles.card_input}`}
             type="text"
-            name="kids_name"
-            id="kids_name"
+            name="kidsName"
+            id="kidsName"
             placeholder="Your kids full name"
             value={form.kidsFullName}
             required
@@ -37,7 +37,7 @@ const Card = () => {
         </div>
 
         <div>
-          <label className="d-block" htmlFor="parent_name">
+          <label className="d-block" htmlFor="parentName">
             Parent full name
           </label>
           <input
@@ -49,17 +49,15 @@ const Card = () => {
             }
             className={`${styles.card_input}`}
             type="text"
-            name="parent_name"
-            id="parent_name"
+            name="parentName"
+            id="parentName"
             placeholder="Parent full name"
             value={form.parentFullName}
           />
         </div>
 
         <div>
-          <label className="d-block" htmlFor="relationship">
-            Relationship with kid
-          </label>
+          <p className="d-block">Relationship with kid</p>
           <div className="d-flex gap-3">
             <span className={`${styles.card_relationship}`}>
               <input
@@ -70,13 +68,13 @@ const Card = () => {
                   })
                 }
                 type="radio"
-                id="relationship_mommy"
-                name="relationship"
+                id="relationshipMommy"
+                name="relationshipMommy"
                 value="mommy"
                 className="me-1"
                 defaultChecked
               />
-              <label htmlFor="relationship_mommy">Mommy</label>
+              <label htmlFor="relationshipMommy">Mommy</label>
             </span>
 
             <span className={`${styles.card_relationship}`}>
@@ -88,12 +86,12 @@ const Card = () => {
                   })
                 }
                 type="radio"
-                id="relationship_daddy"
-                name="relationship"
+                id="relationshipDaddy"
+                name="relationshipDaddy"
                 value="daddy"
                 className="me-1"
               />
-              <label htmlFor="relationship_daddy">Daddy</label>
+              <label htmlFor="relationshipDaddy">Daddy</label>
             </span>
           </div>
         </div>

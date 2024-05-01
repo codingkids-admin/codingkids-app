@@ -27,7 +27,7 @@ const Navbar = () => {
       title: "Fun tips",
     },
     {
-      href: "/contact-us",
+      href: "/#contact-us",
       title: "Contact us",
     },
   ];
@@ -58,6 +58,7 @@ const Navbar = () => {
         >
           <div className={`position-relative ${styles.nav_img_container}`}>
             <Image
+            rel="preload"
               priority={true}
               src="/logo.svg"
               alt="Coding kids indonesia logo"
