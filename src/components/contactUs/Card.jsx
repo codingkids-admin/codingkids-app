@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styles from "./card.module.scss";
 import { AUTH } from "../../utilities/Constant";
+import sendWhatsapp from "@/utilities/sendWhatsapp";
 
 const Card = () => {
   const [form, setForm] = useState({
@@ -130,36 +131,55 @@ const Card = () => {
         <div>
           <button
             style={{
-              display: form.whatsapp.length > 15 && "none",
+              opacity:
+                form.whatsapp.length > 15 ||
+                !form.whatsapp ||
+                !form.kidsFullName ||
+                !form.parentFullName
+                  ? "0.5"
+                  : "1",
             }}
             onClick={(e) => {
               e.preventDefault();
 
-              fetch("https://codingkids.id/api/mail", {
-                method: "POST",
-                headers: {
-                  Authorization: AUTH,
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  message: `<div>
+              if (
+                form.whatsapp.length <= 15 &&
+                form.whatsapp &&
+                form.kidsFullName &&
+                form.parentFullName
+              ) {
+                fetch("http://localhost:3000/api/mail", {
+                  method: "POST",
+                  headers: {
+                    Authorization: AUTH,
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    message: `<div>
                   <h3>Submitted at ${new Date()}</h3>
                   <h4>Kids full name: [ ${form.kidsFullName} ]</h4> 
                   <h4>Parent full name: [ ${form.parentFullName} ]</h4> 
                   <h4>Relationship: [ ${form.relationship} ]</h4>
                   <h4>Whatsapp : [ ${form.whatsapp} ]</h4>
                   </div>`,
-                }),
-              })
-                .then((res) => res.json())
-                .then((data) => {
-                  setForm({
-                    ...form,
-                    kidsFullName: "",
-                    parentFullName: "",
-                    whatsapp: "",
+                  }),
+                })
+                  .then((res) => res.json())
+                  .then((data) => {
+                    setForm({
+                      ...form,
+                      kidsFullName: "",
+                      parentFullName: "",
+                      whatsapp: "",
+                    });
                   });
-                });
+                window.open(
+                  sendWhatsapp(
+                    `Hi Mr, saya ingin consultasi untuk les coding anak saya\nNama Anak: ${form.kidsFullName}\nHubungan dengan anak: ${form.relationship}`
+                  ),
+                  "_blank"
+                );
+              }
             }}
             className={`btn-primary ${styles.btn_form}`}
           >
