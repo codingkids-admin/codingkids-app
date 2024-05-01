@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./card.module.scss";
+
 const Card = () => {
   const [form, setForm] = useState({
     kidsFullName: "",
@@ -8,6 +9,9 @@ const Card = () => {
     relationship: "mommy",
     whatsapp: "",
   });
+  let message = encodeURI(
+    `Kids name: ${form.kidsFullName} | Parent name: ${form.parentFullName} | Relationship: ${form.relationship} | Whatsapp: ${form.whatsapp}`
+  );
   return (
     <div className={`${styles.card_container} p-4`}>
       <form className="d-flex flex-column gap-4">
@@ -27,6 +31,7 @@ const Card = () => {
             name="kids_name"
             id="kids_name"
             placeholder="Your kids full name"
+            required
           />
         </div>
 
@@ -96,6 +101,7 @@ const Card = () => {
             Whatsapp
           </label>
           <input
+            required
             onChange={(ev) => {
               setForm({
                 ...form,
@@ -125,7 +131,6 @@ const Card = () => {
               display: form.whatsapp.length > 15 && "none",
             }}
             onClick={(e) => {
-              e.preventDefault();
               console.log(form);
             }}
             className={`btn-primary ${styles.btn_form}`}
