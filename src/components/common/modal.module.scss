@@ -1,0 +1,55 @@
+@use "../../app/breakpoints.scss" as *;
+@use "../../app/variables.scss" as v;
+
+.modal_body {
+  height: 65vh;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: v.$shadow-2-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: v.$primary-color;
+  }
+}
+
+.modal_header_title {
+  color: v.$primary-color;
+}
+
+.modal_container {
+  place-content: center;
+}
+
+.btn_close {
+  --bs-btn-close-focus-shadow: none;
+}
+
+.card_title {
+  font-size: map-get($map: v.$font-sizes, $key: p-lg);
+}
+
+.curriculum_card_order {
+  background-color: v.$primary-color;
+  display: grid;
+  place-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  h1 {
+    color: v.$secondary-color;
+    font-size: map-get($map: v.$font-sizes, $key: h1-sm);
+  }
+}
+
+.curriculum_card {
+  display: flex;
+  align-items: center;
+  background-color: v.$secondary-color;
+  padding: 0.85rem;
+  border-radius: 1.25rem;
+}

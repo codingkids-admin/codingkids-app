@@ -4,9 +4,11 @@
 .collaborators_container {
   display: flex;
   gap: 0.5rem;
+  justify-content: center;
 
   @include breakpoint(md) {
     gap: 2.5rem;
+    justify-content: start;
   }
 }
 

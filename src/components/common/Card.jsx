@@ -1,9 +1,14 @@
+"use client"
+
 import styles from "./card.module.scss";
 
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
+import { ModalContext } from "@/context/ModalContext";
 
-const Card = ({ src, title, desc, link, beforePrice, afterPrice }) => {
+const Card = ({ id, src, title, desc, link, beforePrice, afterPrice }) => {
+  const c = useContext(ModalContext);
+
   return (
     <div className={`${styles.card_container}`}>
       <div className={`${styles.card_img_container} position-relative mb-3`}>
@@ -41,7 +46,14 @@ const Card = ({ src, title, desc, link, beforePrice, afterPrice }) => {
           </p>
         </div>
 
-        <button className="btn-primary w-100 py-3">Learn more!</button>
+        <button
+          onClick={() => c.updateData({ id, title })}
+          data-bs-target="#cardModal"
+          data-bs-toggle="modal"
+          className="btn-primary w-100 py-3"
+        >
+          Learn more!
+        </button>
       </div>
     </div>
   );

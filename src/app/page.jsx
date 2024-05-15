@@ -6,6 +6,8 @@ import Header from "@/components/header/Header";
 import Information from "@/components/informations/Information";
 import Value from "@/components/value/Value";
 import AboutUs from "@/components/aboutUs/AboutUs";
+import Footer from "@/components/footer/Footer";
+import { ModalProvider } from "@/context/ModalContext";
 
 export const metadata = {
   applicationName: "Koding kids Indonesia",
@@ -21,7 +23,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main>
+    <ModalProvider>
       <Header />
       <Information />
       <Classes />
@@ -29,7 +31,8 @@ export default function Home() {
       <Faq />
       <FreeClasses />
       <ContactUs />
-      <AboutUs/>
-    </main>
+      <AboutUs />
+      <Footer />
+    </ModalProvider>
   );
 }

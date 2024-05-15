@@ -23,8 +23,8 @@ const Navbar = () => {
       title: "Our class",
     },
     {
-      href: "/fun-tips",
-      title: "Fun tips",
+      href: "/#about-us",
+      title: "About us",
     },
     {
       href: "/#contact-us",
@@ -106,7 +106,7 @@ const Navbar = () => {
               isMobile
                 ? "/"
                 : sendWhatsapp(
-                    "Hello Sir Koding Kids!\nNama saya: <masukan_nama_kamu>\nSaya tertarik dengan kelas-kelas di koding kids, boleh bantu saya dalam memilih kelas yang cocok untuk saya/anak saya?"
+                    "Hello Koding Kids!\nNama saya: <masukan_nama_kamu>\nSaya tertarik dengan kelas-kelas di koding kids, boleh bantu saya dalam memilih kelas yang cocok untuk saya/anak saya?"
                   )
             }
             target="_blank"
