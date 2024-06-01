@@ -1,6 +1,7 @@
 import { ModalContext } from "@/context/ModalContext";
 import React, { useContext, useEffect, useState } from "react";
 import styles from "./modal.module.scss";
+import sendWhatsapp from "@/utilities/sendWhatsapp";
 
 const data = [
   {
@@ -33,6 +34,9 @@ const data = [
         desc: "Final project and exam",
       },
     ],
+    link: sendWhatsapp(
+      "Halo Mr, saya ingin tertarik dengan kurikulum Kiddo Developer, boleh tau lebih detial tentang kurikulumnya?"
+    ),
   },
 
   {
@@ -65,11 +69,15 @@ const data = [
         desc: "Final project and exam",
       },
     ],
+    link: sendWhatsapp(
+      "Halo Mr, saya ingin tertarik dengan kurikulum Junior Developer, boleh tau lebih detial tentang kurikulumnya?"
+    ),
   },
 
   {
     title: "Senior Developer",
-    about: "Kids will get their first experience in writing lines of code, and directly build and present their projects.",
+    about:
+      "Kids will get their first experience in writing lines of code, and directly build and present their projects.",
     curriculums: [
       {
         month: 1,
@@ -96,6 +104,48 @@ const data = [
         desc: "Final project and exam",
       },
     ],
+    link: sendWhatsapp(
+      "Halo Mr, saya ingin tertarik dengan kurikulum Senior Developer, boleh tau lebih detial tentang kurikulumnya?"
+    ),
+  },
+
+  {
+    title: "Let's scratch!",
+    about:
+      "In this curriculum your child will learn and get to know more about coding in a fun way. This curriculum is perfect for your child who just wants to learn coding.",
+    curriculums: [
+      {
+        month: 1,
+        desc: "Simple soccer game!",
+      },
+    ],
+    link: "https://youtu.be/j-3eArinB7E?feature=shared",
+  },
+
+  {
+    title: "Basic website!",
+    about:
+      "In this curriculum, your child will learn and get to know more about how to build a website. by the end of this curriculum your child will be able to create a simple website.",
+    curriculums: [
+      {
+        month: 1,
+        desc: "Favorite movie!",
+      },
+    ],
+    link: "https://youtu.be/j-3eArinB7E?feature=shared",
+  },
+
+  {
+    title: "Python is fun!",
+    about:
+      "In this curriculum, your child will learn and write code using text-based learning, this curriculum is perfect for someone who wants to write code for the first time.",
+    curriculums: [
+      {
+        month: 1,
+        desc: "Guessing game!",
+      },
+    ],
+    link: "https://youtu.be/j-3eArinB7E?feature=shared",
   },
 ];
 
@@ -107,8 +157,6 @@ const Modal = () => {
     if (c.data != undefined) {
       setDataModal(data.filter((d) => d.title.match(c.data.title)));
     }
-
-    console.log(dataModal);
   }, [c.data]);
 
   return (
@@ -146,26 +194,37 @@ const Modal = () => {
               </div>
 
               <div>
-                <h1 className={`${styles.card_title} fw-bold mb-2`}>Learning journey</h1>
+                <h1 className={`${styles.card_title} fw-bold mb-2`}>
+                  Learning journey
+                </h1>
 
                 {dataModal.map((val) =>
                   val.curriculums.map((curriculum, index) => (
                     <div
                       key={index}
-                      className={`${styles.curriculum_card} mb-3`}
+                      className={`${styles.curriculum_card} mb-4`}
                     >
                       <div className={`${styles.curriculum_card_order} me-3`}>
                         <h1 className="m-0 fw-bold">{index + 1}</h1>
                       </div>
                       <div>
                         <h1 className={`${styles.card_title} fw-bold`}>
-                          Month {curriculum.month}
+                          {c.data != undefined && c.data.afterPrice == ""
+                            ? "Session "
+                            : "Month "}
+                          {curriculum.month}
                         </h1>
                         <p className="m-0">{curriculum.desc}</p>
                       </div>
                     </div>
                   ))
                 )}
+              </div>
+
+              <div>
+                <a target="_blank" href={dataModal.map((d) => d.link)}>
+                  <button className="btn-primary w-100 py-3">Join now!</button>
+                </a>
               </div>
             </div>
           </div>

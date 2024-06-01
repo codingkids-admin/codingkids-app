@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import styles from "./card.module.scss";
 
@@ -47,7 +47,7 @@ const Card = ({ id, src, title, desc, link, beforePrice, afterPrice }) => {
         </div>
 
         <button
-          onClick={() => c.updateData({ id, title })}
+          onClick={() => c.updateData({ id, title, afterPrice })}
           data-bs-target="#cardModal"
           data-bs-toggle="modal"
           className="btn-primary w-100 py-3"

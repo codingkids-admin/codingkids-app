@@ -6,10 +6,10 @@ const FreeClasses = () => {
   const data = [
     {
       src: "https://placehold.co/400",
-      title: "What's coding?",
+      title: "Let's scratch!",
       desc: "Beginner friendly if you're first time trying to learn code.",
       link: "/our-class/game-dev",
-      beforePrice: "299.000",
+      beforePrice: "399.000",
       afterPrice: "",
     },
     {
@@ -17,7 +17,7 @@ const FreeClasses = () => {
       title: "Basic website!",
       desc: "Let's create your first website and understand the basic of website!",
       link: "/our-class/web-dev",
-      beforePrice: "299.000",
+      beforePrice: "399.000",
       afterPrice: "",
     },
     {
@@ -25,7 +25,7 @@ const FreeClasses = () => {
       title: "Python is fun!",
       desc: "Python code is the most beginner friendly programming language. Let’s learn it!",
       link: "/our-class/py-dev",
-      beforePrice: "299.000",
+      beforePrice: "399.000",
       afterPrice: "",
     },
   ];
